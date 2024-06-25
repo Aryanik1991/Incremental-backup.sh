@@ -21,9 +21,6 @@ if [ ! -e $path ]; then
 elif [ ! -d $path ]; then
          echo "Error: $path is not a directory"
          exit 1
-elif [ -z $path ]; then
-         echo "Error: $path can not be empty"
-         exit 1
  fi
  #Check AWS CLI command
 if ! command -v aws cli &>>/dev/nul; then
