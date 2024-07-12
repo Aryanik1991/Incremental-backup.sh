@@ -23,7 +23,7 @@ elif [ ! -d $path ]; then
          exit 1
  fi
  #Check AWS CLI command
-if ! command -v aws cli &>>/dev/nul; then
+if ! command -v aws cli &>>/dev/null; then
         echo "AWS CLI is not install. Pleas install it."
         exit 1
 fi
