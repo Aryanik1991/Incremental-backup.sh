@@ -29,9 +29,9 @@ if ! command -v aws cli &>>/dev/null; then
 fi
 
  #Define backup file name, compress it, and update snapshot file
- backup_new="$(dirname $path)/backup_$(basename $path)_$(date +%Y%m%d%H%M%S).tar.xz"
+ backup_new="$(dirname $path)/backup_$(basename $path)_$(date +%Y%m%d%H%M%S).tar.gz"
  backup_snap="$(dirname $path)/backup_$(basename $path).snap"
- tar -cJf $backup_new --listed-incremental=$backup_snap -C $(dirname $path) $(basename $path)
+ tar -czf $backup_new --listed-incremental=$backup_snap -C $(dirname $path) $(basename $path)
  if [ $? -eq 0 ]; then
          echo "backup file created"
  else
